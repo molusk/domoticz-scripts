@@ -1,0 +1,2 @@
+ if changed checksum      then alert
+ if failed permission 755 then unmonitor
