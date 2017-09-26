@@ -1,0 +1,14 @@
+# domoticz
+
+# Avec le script init.d, le démon a un fichier pid
+#  check process domoticz with pidfile /var/run/domoticz.pid
+
+# Avec sytemd, pas de fichier pid
+  check process domoticz matching "domoticz"
+    start program = "systemctl start domoticz" with timeout 60 seconds
+    stop program  = "systemctl stop domoticz"
+    if failed url http://127.0.0.1/json.htm?type=scenes
+	and content = '"status" : "OK"'
+    for 20 cycles
+    then restart
+#    if 5 restarts within 5 cycles then exec "/sbin/reboot"
