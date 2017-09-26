@@ -1,6 +1,5 @@
 # Supervision des services via monit
-Ajout des templates
-Ajout de configurations pour
+Ajout des templates et des configurations pour
  - Bind9
  - OpenSSH
  - NTPd
