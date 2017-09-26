@@ -1,0 +1,2 @@
+ if failed checksum       then alert
+ if failed permission 600 then alert
