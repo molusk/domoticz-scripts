@@ -12,6 +12,7 @@ Ajouter l'utilisateur dans le groupe dialout
 
 ## Déactiver le service init.d si existant
 `sudo update-rc.d domoticz remove
+
 sudo mv /etc/init.d/domoticz ~`
 
 ## Donner les droits à domoticzz d'utiliser les pors non-privilégiés
@@ -23,4 +24,5 @@ sudo mv /etc/init.d/domoticz ~`
 (fichier dispo dans le dossier systemd de ce dépôt)
 
 `sudo systemctl enable domoticz
+
 sudo systemctl start domoticz`
