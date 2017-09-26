@@ -1,0 +1,31 @@
+check process named with pidfile /var/run/named/named.pid
+   group system
+   group named
+   start program = "/etc/init.d/bind9 start"
+   stop  program = "/etc/init.d/bind9 stop"
+   if 4 restarts within 12 cycles then timeout
+   depend named_bin
+   depend named_rc
+   depend named_conf
+   depend named_zone
+   depend named_zrev
+
+ check file named_bin with path /usr/sbin/named
+   group named
+   include /etc/monit/templates/rootbin
+
+ check file named_rc with path /etc/init.d/bind9
+   group named
+   include /etc/monit/templates/rootbin
+
+ check file named_conf with path /etc/bind/named.conf
+   group named
+   include /etc/monit/templates/check644
+
+ check file named_zone with path /var/cache/bind/db.notwork
+   group named
+   include /etc/monit/templates/644
+
+ check file named_zrev with path /var/cache/bind/db.192.168
+   group named
+   include /etc/monit/templates/644
