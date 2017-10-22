@@ -16,7 +16,9 @@ ExecStart=/home/pi/domoticz/domoticz -www 80 -sslwww 443
 # ExecStartPre=setcap 'cap_net_bind_service=+ep' /home/pi/domoticz/domoticz
 #
 # The below works on ubuntu 16 LTS.
-CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+# CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+AmbientCapabilities=CAP_NET_BIND_SERVICE
 
 KillMode=process
 Restart=on-failure
