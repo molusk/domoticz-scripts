@@ -12,8 +12,8 @@ sudo update-rc.d domoticz remove
 sudo mv /etc/init.d/domoticz ~
 ```
 
-## Donner les droits à domoticz d'utiliser les pors non-privilégiés
-`sudo setcap CAP_NET_BIND_SERVICE=+eip /home/pi/domoticz/domoticz`
+## ~~Donner les droits à domoticz d'utiliser les pors non-privilégiés~~
+~~`sudo setcap CAP_NET_BIND_SERVICE=+eip /home/pi/domoticz/domoticz`~~
 
 ## Créer l'unité Systemd
 `sudo vi /lib/systemd/system/domoticz.service`
