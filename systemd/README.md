@@ -1,8 +1,8 @@
 # Domoticz, Raspbian et Systemd
-## Accès aux ports série
-Ajouter l'utilisateur dans le groupe dialout
+## Accès aux ports série et gpio
+Ajouter l'utilisateur dans les groupes dialout et gpio
 
-`sudo usermod -aG dialout pi`
+`sudo usermod -aG dialout gpio pi`
 
 (reboot nécessaire pour prise en compte)
 
