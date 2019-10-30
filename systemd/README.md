@@ -1,24 +1,21 @@
-# Domoticz, Raspbian et Systemd
-## Accès aux ports série et gpio
-Ajouter l'utilisateur dans les groupes dialout et gpio
+# Domoticz, Raspbian and Systemd
+## Serial ports and GPIO access
+Add the user in dialout and gpio groups
 
 `sudo usermod -aG dialout gpio pi`
 
-(reboot nécessaire pour prise en compte)
+(then reboot)
 
-## Déactiver le service init.d si existant
+## Deactivate existing init.d service
 ```
 sudo update-rc.d domoticz remove
 sudo mv /etc/init.d/domoticz ~
 ```
 
-## ~~Donner les droits à domoticz d'utiliser les pors non-privilégiés~~
-~~`sudo setcap CAP_NET_BIND_SERVICE=+eip /home/pi/domoticz/domoticz`~~
-
-## Créer l'unité Systemd
+## Create Systemd unit
 `sudo vi /lib/systemd/system/domoticz.service`
 
-(fichier dispo dans le dossier systemd de ce dépôt)
+(file available above)
 
 ```
 sudo systemctl enable domoticz
